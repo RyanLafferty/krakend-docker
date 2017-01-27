@@ -24,6 +24,6 @@ You can also put a`service.yml` file but if it is not present the system will us
 Run docker with the debug visible (`-d` at the end). The configuration files are taken from current directory (`$PWD`). It is expected to find at least the file `krakend.json`:
 
     docker pull devopsfaith/krakend
-    docker run -p 8080:8080 -v $PWD:/etc/krakend/ devopsfaith/krakend -d
+    docker run -p 8080:8080 -v $PWD:/etc/krakend/ devopsfaith/krakend
 
 Any questions please let us know via Github issue

@@ -6,6 +6,7 @@ RUN tar xvfz krakend_${KRAKEND_VERSION}_amd64.tar.gz
 
 VOLUME [ "/etc/krakend" ]
 
-ENTRYPOINT [ "/krakend", "run" ]
+ENTRYPOINT [ "/krakend" ]
+CMD [ "run", "-d" ]
 
 EXPOSE 8080
