@@ -20,10 +20,30 @@ You can also put a`service.yml` file but if it is not present the system will us
 
 [Generate your krakend.json here](http://www.krakend.io/designer/)
 
-### Example
-Run docker with the debug visible (`-d` at the end). The configuration files are taken from current directory (`$PWD`). It is expected to find at least the file `krakend.json`:
+### Examples
+The following are several examples of running krakend. By default the command `run` is executed, but you can pass
+other commands and flags at the end of the run command.
+
+The configuration files are taken from current directory (`$PWD`). It is expected to find at least the file `krakend.json`.
+
+Pull the image and run KrakenD (default parameters):
 
     docker pull devopsfaith/krakend
     docker run -p 8080:8080 -v $PWD:/etc/krakend/ devopsfaith/krakend
 
-Any questions please let us know via Github issue
+
+Run with the debug enabled:
+
+    docker run -p 8080:8080 -v $PWD:/etc/krakend/ devopsfaith/krakend run -d
+
+Check the syntax of the configuration file
+
+    docker run -it -p 8080:8080 -v $PWD:/etc/krakend/ devopsfaith/krakend check --config krakend.json
+
+Show the help:
+
+    docker run -it -p 8080:8080 -v $PWD:/etc/krakend/ devopsfaith/krakend --help
+
+Enjoy KrakenD!
+
+And any questions please let us know via Github issue
